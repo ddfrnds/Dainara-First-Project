@@ -30,14 +30,16 @@ def app():
 
     with st.container():
         nome = st.text_input("Nome")
-        email = st.text_input("Email")
-        telefone = st.text_input("Telefone")
-        cpf = st.text_input("CPF", key="cpf", placeholder=formatar_cpf("99999999999"), on_change=on_change_cpf)
         profissao = st.text_input("Profissão")
+        estado_civil = st.selectbox("Estado Civil", ("Solteiro", "Casado", "Separado", "Divorciado", "Viúvo"))
+        cpf = st.text_input("CPF", key="cpf", placeholder=formatar_cpf("99999999999"), on_change=on_change_cpf)
+        carteira_de_identidade = st.text_input("RG")
         cep = st.text_input("CEP")
         endereco = st.text_input("Endereço completo")
-        estado_civil = st.selectbox("Estado Civil", ("Solteiro", "Casado", "Separado", "Divorciado", "Viúvo"))
-        tipo_de_servico = st.multiselect("Tipos de serviços", ("Escritura", "Inventario"))
+        email = st.text_input("Email")
+        telefone = st.text_input("Telefone")
+        forma_de_pagamento = st.text_input("Forma de pagamento")
+        data_do_contrato = st.text_input ("Data do contrato")
 
 
 app()
