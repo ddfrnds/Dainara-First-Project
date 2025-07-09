@@ -1,5 +1,11 @@
 import streamlit as st
 
+# CONSTANTS
+LISTA_SERVICOS = ["Usucapião judicial","Usucapião extrajudicial","Escritura",
+             "Inventario","Contrato","Consultoria","Mentoria Start","Mentoria Acelera","Formação RINP"]
+
+ESTADO_CIVIL = ["Solteiro", "Casado", "Convivente em união estável", "Divorciado", "Viúvo"]
+
 # utils
 def formatar_cpf(cpf: str) -> str:
     """
@@ -22,7 +28,7 @@ def on_change_cpf():
 
 # app
 def app():
-    st.title("_Cadastro de usuarios da :blue[DaIf]_")
+    st.title("_Cadastro de clientes da :blue[DaIf]_")
     st.caption(body="Me encontre em no github! [https://github.com/ddfrnds]")
 
     if "cpf" not in st.session_state:
@@ -36,8 +42,8 @@ def app():
         profissao = st.text_input("Profissão")
         cep = st.text_input("CEP")
         endereco = st.text_input("Endereço completo")
-        estado_civil = st.selectbox("Estado Civil", ("Solteiro", "Casado", "Separado", "Divorciado", "Viúvo"))
-        tipo_de_servico = st.multiselect("Tipos de serviços", ("Escritura", "Inventario"))
+        estado_civil = st.selectbox("Estado Civil", (ESTADO_CIVIL))
+        tipo_de_servico = st.multiselect("Tipos de serviços", (LISTA_SERVICOS))
 
 
 app()
